@@ -1,0 +1,145 @@
+.theory-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.theory-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  line-height: 1.6;
+}
+
+.back-btn {
+  width: auto;
+  padding: 0.5rem 1rem;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #5a6268;
+}
+
+.theory-content h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+.theory-description p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.theory-description code {
+  background: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+}
+
+.theory-description pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* Добавьте эти стили в существующий Theory.css */
+
+.theory-container {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.theory-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.back-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-btn:hover {
+  background: linear-gradient(135deg, #5a6268, #495057);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.4);
+}
+
+.theory-description {
+  padding: 30px;
+  line-height: 1.7;
+  color: #495057;
+  font-size: 16px;
+  background: white;
+}
+
+.theory-description p {
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.theory-description h1, 
+.theory-description h2, 
+.theory-description h3 {
+  color: #2c3e50;
+  margin: 30px 0 15px 0;
+}
+
+.theory-description code {
+  background: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #e83e8c;
+}
+
+.theory-description pre {
+  background: #2c3e50;
+  color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+/* Адаптивность для теории */
+@media (max-width: 768px) {
+  .theory-description {
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  .back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

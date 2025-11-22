@@ -1,0 +1,7 @@
+flask
+flask-socketio
+eventlet
+pika
+python-dotenv
+flask_cors
+kombu

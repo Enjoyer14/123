@@ -1,0 +1,84 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+  color: #333;
+}
+
+.header h1:hover {
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+}
+
+.profile-btn:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Добавьте эти стили в существующий Header.css */
+
+.logout-btn {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #bb0303, #d74202);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(207, 64, 16, 0.595);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #9e350c, #840606);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(207, 64, 16, 0.695);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+}
+
+/* Адаптивность для хедера */
+@media (max-width: 768px) {
+  .user-info {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .profile-btn, .logout-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

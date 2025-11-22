@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: qwezxc
+      POSTGRES_DB: AlgoTrainer
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  auth_service:
+    build: ./auth_service
+    env_file: ./auth_service/.env
+    depends_on:
+      - postgres
+    ports:
+      - "5000:5000"
+
+  main_service:
+    build: ./main_service
+    env_file: ./main_service/.env
+    depends_on:
+      - postgres
+      - rabbitmq
+    ports:
+      - "5001:5001"
+
+  code_runner_service:
+    build: ./code_runner_service
+    env_file: ./code_runner_service/.env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - rabbitmq
+    ports:
+      - "5002:5002"
+
+  notifier_service:
+    build: ./notifier_service
+    env_file: ./notifier_service/.env
+    depends_on:
+      - rabbitmq
+    ports:
+      - "5003:5003"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - main_service
+      - auth_service
+    environment:
+      - VITE_API_URL=http://localhost:5001
+
+volumes:
+  pgdata:
