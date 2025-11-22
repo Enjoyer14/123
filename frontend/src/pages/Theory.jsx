@@ -3,7 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { taskService } from '../services/api'
 import Header from '../components/Header'
 import LoadingSpinner from '../components/LoadingSpinner'
-import CommentsSection from '../components/CommentsSection' // Добавьте этот импорт
+import CommentsSection from '../components/CommentsSection'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import './Theory.css'
 
 const Theory = () => {
@@ -52,14 +54,13 @@ const Theory = () => {
         <button onClick={() => navigate('/tasks')} className="back-btn">
           ← Назад к задачам
         </button>
-        <h1>{theory.title}</h1>
-        <div className="theory-description">
-          {theory.description.split('\n').map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
-        
-        {/* Добавьте этот блок для комментариев */}
+        {theory.title && <h1>{theory.title}</h1>}
+        <ReactMarkdown
+          className="theory-description"
+          remarkPlugins={[remarkGfm]}
+        >
+          {theory.description}
+        </ReactMarkdown>
         <CommentsSection parentType="theory" parentId={theory.theory_id} />
       </div>
     </div>
