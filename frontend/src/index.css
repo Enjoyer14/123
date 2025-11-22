@@ -1,14 +1,32 @@
+/* CSS Variables for unified theming */
+:root {
+  --app-bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --panel-bg: #ffffff;
+  --panel-radius: 12px;
+  --panel-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  --text-color: #333;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  min-height: 100vh;
+  background: var(--app-bg-gradient);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  color: var(--text-color);
   line-height: 1.6;
+  margin: 0;
 }
 
 .loading {
@@ -18,10 +36,6 @@ body {
   height: 100vh;
   font-size: 18px;
   color: #666;
-}
-
-.App {
-  min-height: 100vh;
 }
 
 /* Общие стили для кнопок */
