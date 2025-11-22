@@ -5,10 +5,10 @@
 }
 
 .theory-content {
-  background: #ffffff;
+  background: var(--panel-bg);
   padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
   line-height: 1.65;
 }
 

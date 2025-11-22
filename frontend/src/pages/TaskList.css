@@ -1,7 +1,6 @@
 .task-list-container {
   margin: 0 auto;
   padding: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .header {
@@ -38,9 +37,9 @@
   gap: 2rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: var(--panel-bg);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
 }
 
 .filter-group {
@@ -71,9 +70,9 @@
   flex-direction: column;
   height: 100%; /* Важно для правильной работы margin-top: auto */
   padding: 1.5rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background: var(--panel-bg);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
   transition: all 0.3s ease;
   position: relative;
 }

@@ -3,14 +3,13 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 .auth-form {
-  background: white;
+  background: var(--panel-bg);
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: var(--panel-radius);
+  box-shadow: var(--panel-shadow);
   width: 100%;
   max-width: 400px;
 }
